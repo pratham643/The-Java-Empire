@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		.form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #f2f2f2;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.3);
+			width: 100%;
+			max-width: 400px;
+		}
+		.form input[type="text"],
+		.form input[type="password"] {
+			padding: 10px;
+			margin: 10px;
+			border-radius: 5px;
+			border: none;
+			background-color: #fff;
+			width: 100%;
+			font-size: 16px;
+			box-sizing: border-box;
+		}
+		.form input[type="submit"] {
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			margin: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 100%;
+			font-size: 16px;
+			box-sizing: border-box;
+		}
+		.form label {
+			font-size: 16px;
+		}
+		@media screen and (min-width: 768px) {
+			.form {
+				margin-top: 50px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form class="form" onsubmit="return validate()">
+			<h1>Login</h1>
+			<label for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+			<input type="submit" value="Login">
+		</form>
+	</div>
+	<script>
+		function validate() {
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+			var user1 = {
+				username: "pratham",
+				password: "12345"
+			};
+			var user2 = {
+				username: "12345",
+				password: "12345"
+			};
+			var users = [user1, user2];
+			var authenticated = false;
+			for(var i = 0; i < users.length; i++) {
+				if(username === users[i].username && password === users[i].password) {
+					authenticated = true;
+					break;
+				}
+			}
+			if(authenticated) {
+				window.location.href = "\ChatBot\\index.html";
+				return false;
+			} else {
+				alert("Invalid username or password.");
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
