@@ -21,12 +21,14 @@ btn.addEventListener('click' , function(e){
      var message=document.getElementById('message').value ;
      var body ='name: ' +name + '<br/> email: ' + email + '<br/> subject' + '<br/> phone'+ phone + '<br/> message'+ message;
      Email.send({
-      Host : "smtp.elasticemail.com", 
+     Host : "smtp.elasticemail.com", 
         Username : "gangardepatil643@gmail.com",
         Password : "BF91EFF41FD7824C9DA210352C21C2102844",
         To : 'gangardepatil643@gmail.com',
+        From : 'gangardepatil643@gmail.com',
+        port:'2525',
         Subject:subject,
-        From : email,
+        Fromscript : email,
         Body : body
     }).then(
       message => alert(message)
