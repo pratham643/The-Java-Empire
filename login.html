@@ -82,7 +82,11 @@
 				username: "12345",
 				password: "@12345"
 			};
-			var users = [user1, user2];
+			var user3 = {
+				username: "Raghuvendra",
+				password: "Raghu@098765"
+			};
+			var users = [user1, user2, user3];
 			var authenticated = false;
 			for(var i = 0; i < users.length; i++) {
 				if(username === users[i].username && password === users[i].password) {
