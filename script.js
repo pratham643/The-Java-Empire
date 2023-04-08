@@ -19,7 +19,7 @@ btn.addEventListener('click' , function(e){
      var email=document.getElementById('email').value ;
      var subject=document.getElementById('subject').value ;
      var message=document.getElementById('message').value ;
-     var body ='name: ' +name + '<br/> email: ' + email + '<br/> subject' + '<br/> phone'+ phone + '<br/> message'+ message;
+    var body ='name: ' +name + '<br/> email: ' + email + '<br/> subject:'+ subject + '<br/> phone:'+ phone + '<br/> message:'+ message;
      Email.send({
      Host : "smtp.elasticemail.com", 
         Username : "gangardepatil643@gmail.com",
