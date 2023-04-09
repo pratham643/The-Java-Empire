@@ -65,8 +65,22 @@
 			<h1>Login</h1>
 			<label for="username">Username:</label>
 			<input type="text" id="username" name="username" required>
+			
 			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" required>
+<input type="password" id="password" name="password">
+<button type="button" onclick="togglePassword()">Show Password</button>
+
+<script>
+function togglePassword() {
+  var passwordInput = document.getElementById("password");
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+  } else {
+    passwordInput.type = "password";
+  }
+}
+</script>
+
 			<input type="submit" value="Login">
 		</form>
 	</div>
