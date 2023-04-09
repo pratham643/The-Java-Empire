@@ -17,3 +17,58 @@
     display: table;
     clear: both;
   }
+.heading {
+   text-align: left;
+   margin-left: 2rem;
+   
+}
+
+ /* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+   /* contact */
+   #contact{
+    font-family: 'Cormorant SC', serif;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+     height:35rem;
+     background-color: rgb(202, 177, 244);
+     text-align: center;
+     padding:3rem;
+  }
+  #contact input{
+    width:80%;
+    height:1.8rem;
+    border-radius: 1rem;
+    margin-top:1rem;
+    padding-left: 1rem;
+    border-color: #98a6ad;
+    
+  }
+  #contact .elaborate{
+    padding-bottom:9.9rem;
+    height:12rem;
+  }
+  #contact button{
+    height:1.8rem;
+    font-weight: bold;
+    color:black;
+    width:5rem;
+    text-align: center;
+    align-items: center;
+    margin-top: 1rem;
+    border-color: #020b0f;
+    border-radius: 0.3rem;
+    font-family: 'Cormorant SC', serif;
+    font-size: 1rem;
+  }
