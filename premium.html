@@ -155,7 +155,7 @@ grecaptcha.ready(function() {
 
 		<?php
 if(isset($_POST['submit'])){
-    $secret_key = "6LesCHYlAAAAAJP01q_K4jwMzAsTkok1PAe5jKI-";
+    $secret_key = "6LdYh3YlAAAAAPA0vnmCZ2vOiyh6fZonoAftuNo4";
     $response = $_POST['g-recaptcha-response'];
     $remote_ip = $_SERVER['REMOTE_ADDR'];
     $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret_key."&response=".$response."&remoteip=".$remote_ip;
