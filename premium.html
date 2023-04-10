@@ -89,7 +89,7 @@ function togglePassword() {
 }
 </script>
 
-			<input type="submit" value="Login">
+			<input type="submit" value="Login" onclick="validate()">
 		</form>
 	</div>
 	<script>
@@ -144,32 +144,16 @@ function togglePassword() {
 				return false;
 			}
 		}
-	function enableSubmit() {
-    document.getElementsByName("submit")[0].disabled = false;
-}
-grecaptcha.ready(function() {
-    grecaptcha.execute('6LesCHYlAAAAAGxdZhs6jI5EeT67zO4iKBZwDHap', {action: 'login'}).then(function(token) {
-        enableSubmit();
-    });
-});
-
-		<?php
-if(isset($_POST['submit'])){
-    $secret_key = "6LdYh3YlAAAAAPA0vnmCZ2vOiyh6fZonoAftuNo4";
-    $response = $_POST['g-recaptcha-response'];
-    $remote_ip = $_SERVER['REMOTE_ADDR'];
-    $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret_key."&response=".$response."&remoteip=".$remote_ip;
-    $result = file_get_contents($url);
-    $json = json_decode($result);
-    if($json->success == true) {
-       window.location.href = "video.html";
-				return false;
-    } else {
-        // reCAPTCHA verification failed
-        // display error message
+	<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    function validate() {
+        grecaptcha.execute('YOUR_SITE_KEY', {action: 'submit'}).then(function(token) {
+            // add code to submit the form with the token
+        });
     }
-}
-?>
+</script>
+
+	
 
 	</script>
 </body>
