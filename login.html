@@ -73,16 +73,20 @@
 				<input type="text" id="username" name="username" required><br><br>
 				<label for="password">Password:</label>
 				<input type="password" id="password" name="password" required><br><br>
-				<button type="button" onclick="togglePassword()">Show Password</button>
+                             <span toggle="#password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 			<div class="g-recaptcha" data-sitekey="6LdYh3YlAAAAAPBCwEU3tdJG5eKFCXUvbhF99AoC" data-callback="onSubmit"></div>
 				<script>
-				function togglePassword() {
-				  var passwordInput = document.getElementById("password");
-				  if (passwordInput.type === "password") {
-					passwordInput.type = "text";
-				  } 
-				}
-				</script>
+  $(".toggle-password").click(function() {
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    var input = $($(this).attr("toggle"));
+    if (input.attr("type") == "password") {
+      input.attr("type", "text");
+    } else {
+      input.attr("type", "password");
+    }
+  });
+</script>
+
 				
 
 				<button type="button" onclick="validate()">Log in</button>
