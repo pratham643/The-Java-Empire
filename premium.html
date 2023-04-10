@@ -89,15 +89,21 @@ function togglePassword() {
 }
 </script>
 
-			<input type="submit" value="Login" onclick="validate()">
+			<input type="submit" value="Login">
 		</form>
 	</div>
 	<script>
+		<?php
+    $secret_key = "6LesCHYlAAAAAJP01q_K4jwMzAsTkok1PAe5jKI-";
+    $response = $_POST['g-recaptcha-response'];
+    $remote_ip = $_SERVER['REMOTE_ADDR'];
+    $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret_key."&response=".$response."&remoteip=".$remote_ip;
+    $result = file_get_contents($url);
+    $json = json_decode($result);
+    if($json->success == true) {
 		
 		function validate() {
-        grecaptcha.execute('6LdYh3YlAAAAAPBCwEU3tdJG5eKFCXUvbhF99AoC
-', {action: 'submit'}).then(function(token) {
-			var username = document.getElementById("username").value;
+                    var username = document.getElementById("username").value;
 			var password = document.getElementById("password").value;
 			var user1 = {
 				username: "pratham",
@@ -147,10 +153,22 @@ function togglePassword() {
 				return false;
 			}
 		}
+	     } else {
+        // reCAPTCHA verification failed
+        Please verify captcha.
+    }
+?>  
 	<script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
     
-        
+     
+        // reCAPTCHA verification successful
+        // process login request
+    } else {
+        // reCAPTCHA verification failed
+        // display error message
+    }
+?>  
    
 </script>
 
