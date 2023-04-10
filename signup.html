@@ -1,1 +1,73 @@
-new users are not allowed currently , please contact administrator or raise a query.
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signup Form</title>
+    <link rel="stylesheet" href="style.css">
+	<script>
+		function generateCredentials() {
+			// Get the values of the input fields
+			let name = document.getElementById("name").value;
+			let email = document.getElementById("email").value;
+
+			// Check if all mandatory fields are filled
+			if (name == "" || email == "") {
+				alert("Please fill all mandatory fields.");
+				return;
+			}
+
+			// Generate a username and password based on the user's name
+			let username = name.replace(/\s+/g, '').toLowerCase();
+			let num = Math.floor(Math.random() * 9000) + 1000;
+			let password = name.replace(/\s+/g, '') + '@' + num;
+
+			// Show the login credentials in an alert
+			let message = "Your login credentials:\nUsername: " + username + "\nPassword: " + password;
+			alert(message);
+
+			// Update the validate function on the login page with the new credentials
+			let validateFunction = "function validate() {\n\tlet username = document.getElementById('username').value;\n\tlet password = document.getElementById('password').value;\n\tif (username == '" + username + "' && password == '" + password + "'){\n\t\talert('Login successful!');\n\t\twindow.location.href = 'video.html';\n\t} else {\n\t\talert('Incorrect username or password.');\n\t}\n}";
+
+			// Store the validate function in localStorage
+			localStorage.setItem("validateFunction", validateFunction);
+
+			// Redirect to the login page
+			window.location.href = "login.html";
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<div class="form-group">
+    <div id="contact">
+        <h1>Signup</h1>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name" required><br><br>
+        <label for="name">Mobile number:</label>
+		<input type="number" id="number" name="number" required><br><br>
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required><br><br>
+        <label for="Education">Education:</label>
+		<input type="email" id="email" name="Education" required><br><br>
+        <label for="Education">Confirm Your Name:</label>
+        <input type="text" placeholder="Confirm Your Name" id ="name"><br>
+        <label for="number">Confirm Mobile number:</label>
+        <input type="number" placeholder="confirm Your Phone"  id ="phone"><br>
+        <label for="Education">Confirm Your Email:</label>
+        <input type="text" placeholder="Confirm Your Email"  id ="email"><br>
+        <label for="Education">Confirm Your education:</label>
+        <input type="text" placeholder="Confirm Your education"  id ="subject"><br>
+        <label for="Education">Confirm College Name:</label>
+        <input type="text" placeholder="College Name"  id ="message"><br>
+        Note-Please Click on Verify before signup. 
+        <button type="submit" id="btn">Verify</button>
+		<button type="button" id="button" onclick="generateCredentials()">Sign up</button>
+        
+    </div>
+	</form>
+		  </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script src="script.js"></script>
+</body>
+</html>

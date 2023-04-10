@@ -61,67 +61,35 @@
 </head>
 <body>
 	<div class="container">
-		<form class="form" onsubmit="return validate()">
-			<h1>Login</h1>
-			<label for="username">Username:</label>
-			<input type="text" id="username" name="username" required>
-			<label for="password">Password:</label>
-			<input type="password" id="password" name="password" required>
-			<input type="submit" value="Login">
-		</form>
+		
+			<form class="form">
+				<label for="username">Username:</label>
+				<input type="text" id="username" name="username" required><br><br>
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required><br><br>
+				<button type="button" onclick="togglePassword()">Show Password</button>
+			
+				<script>
+				function togglePassword() {
+				  var passwordInput = document.getElementById("password");
+				  if (passwordInput.type === "password") {
+					passwordInput.type = "text";
+				  } 
+				}
+				</script>
+				
+
+				<button type="button" onclick="validate()">Log in</button>
+
+			</form>
 	</div>
 	<script>
-		function validate() {
-			var username = document.getElementById("username").value;
-			var password = document.getElementById("password").value;
-			var user1 = {
-				username: "pratham",
-				password: "@12345"
-			};
-			var user2 = {
-				username: "12345",
-				password: "@12345"
-			};
-			var user3 = {
-				username: "Raghuvendra",
-				password: "Raghu@098765"
-			};
-			var user4 = {
-				username: "Chinmoy",
-				password: "Chinmoy@098765"
-			};
-			var user5 = {
-				username: "Sarthak",
-				password: "Sarthak@098765"
-			};
-			var user6 = {
-				username: "Rahul",
-				password: "Rahul@098765"
-			};
-			var user7 = {
-				username: "Shivam",
-				password: "Shivam@098765"
-			};
-			var user8 = {
-				username: "Aniket",
-				password: "Aniket@098765"
-			};
-			var users = [user1, user2, user3, user4, user5, user6, user7, user8];
-			var authenticated = false;
-			for(var i = 0; i < users.length; i++) {
-				if(username === users[i].username && password === users[i].password) {
-					authenticated = true;
-					break;
-				}
-			}
-			if(authenticated) {
-				window.location.href = "video.html";
-				return false;
-			} else {
-				alert("Invalid username or password.");
-				return false;
-			}
-		}
+		// Get the validate function from localStorage
+		let validateFunction = localStorage.getItem("validateFunction");
+
+		// Dynamically create the validate function
+		eval(validateFunction);
 	</script>
+	
 </body>
 </html>
