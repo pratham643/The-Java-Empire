@@ -75,7 +75,7 @@
 			<label for="password">Password:</label>
 <input type="password" id="password" name="password">
 <button type="button" onclick="togglePassword()">Show Password</button>
-    <div class="g-recaptcha" data-sitekey="6LdYh3YlAAAAAPBCwEU3tdJG5eKFCXUvbhF99AoC" data-callback="onSubmit"></div>
+    <div class="g-recaptcha" data-sitekey="6LdYh3YlAAAAAPBCwEU3tdJG5eKFCXUvbhF99AoC" ></div>
 		
 
 <script>
@@ -93,15 +93,6 @@ function togglePassword() {
 		</form>
 	</div>
 	<script>
-		<?php
-    $secret_key = "6LesCHYlAAAAAJP01q_K4jwMzAsTkok1PAe5jKI-";
-    $response = $_POST['g-recaptcha-response'];
-    $remote_ip = $_SERVER['REMOTE_ADDR'];
-    $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret_key."&response=".$response."&remoteip=".$remote_ip;
-    $result = file_get_contents($url);
-    $json = json_decode($result);
-    if($json->success == true) {
-		
 		function validate() {
                     var username = document.getElementById("username").value;
 			var password = document.getElementById("password").value;
@@ -153,11 +144,7 @@ function togglePassword() {
 				return false;
 			}
 		}
-	     } else {
-        // reCAPTCHA verification failed
-        Please verify captcha.
-    }
-?>  
+	      
 	<script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
     
