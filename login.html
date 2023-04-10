@@ -59,6 +59,12 @@
 		}
 	</style>
 </head>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+	function onSubmit(token) {
+		document.getElementById("login-form").submit();
+	}
+</script>
 <body>
 	<div class="container">
 		
@@ -68,7 +74,7 @@
 				<label for="password">Password:</label>
 				<input type="password" id="password" name="password" required><br><br>
 				<button type="button" onclick="togglePassword()">Show Password</button>
-			
+			<div class="g-recaptcha" data-sitekey="6LdYh3YlAAAAAPBCwEU3tdJG5eKFCXUvbhF99AoC" data-callback="onSubmit"></div>
 				<script>
 				function togglePassword() {
 				  var passwordInput = document.getElementById("password");
@@ -89,6 +95,15 @@
 
 		// Dynamically create the validate function
 		eval(validateFunction);
+		
+		function enableSubmit() {
+    document.getElementsByName("submit")[0].disabled = false;
+}
+grecaptcha.ready(function() {
+    grecaptcha.execute('6LesCHYlAAAAAGxdZhs6jI5EeT67zO4iKBZwDHap', {action: 'login'}).then(function(token) {
+        enableSubmit();
+    });
+});
 	</script>
 	
 </body>
