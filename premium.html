@@ -93,7 +93,10 @@ function togglePassword() {
 		</form>
 	</div>
 	<script>
+		
 		function validate() {
+        grecaptcha.execute('6LdYh3YlAAAAAPBCwEU3tdJG5eKFCXUvbhF99AoC
+', {action: 'submit'}).then(function(token) {
 			var username = document.getElementById("username").value;
 			var password = document.getElementById("password").value;
 			var user1 = {
@@ -146,11 +149,9 @@ function togglePassword() {
 		}
 	<script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
-    function validate() {
-        grecaptcha.execute('YOUR_SITE_KEY', {action: 'submit'}).then(function(token) {
-            // add code to submit the form with the token
-        });
-    }
+    
+        
+   
 </script>
 
 	
