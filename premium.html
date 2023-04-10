@@ -75,7 +75,7 @@
 			<label for="password">Password:</label>
 <input type="password" id="password" name="password">
 <button type="button" onclick="togglePassword()">Show Password</button>
-			<div class="g-recaptcha" data-sitekey="6LcjbHYlAAAAAMjb-ekzKcc1Kt1Oj05KYd8aucXa" data-callback="onSubmit"></div>
+    <div class="g-recaptcha" data-sitekey="6LdYh3YlAAAAAPBCwEU3tdJG5eKFCXUvbhF99AoC" data-callback="onSubmit"></div>
 		
 
 <script>
@@ -144,21 +144,15 @@ function togglePassword() {
 				return false;
 			}
 		}
-		<?php
-    $secret_key = "6LcjbHYlAAAAAI4eAYzobyKT90n7rW6tqOjBFgRy";
-    $response = $_POST['g-recaptcha-response'];
-    $remote_ip = $_SERVER['REMOTE_ADDR'];
-    $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret_key."&response=".$response."&remoteip=".$remote_ip;
-    $result = file_get_contents($url);
-    $json = json_decode($result);
-    if($json->success == true) {
-        // reCAPTCHA verification successful
-        // process login request
-    } else {
-        // reCAPTCHA verification failed
-        // display error message
-    }
-?>
+	function enableSubmit() {
+    document.getElementsByName("submit")[0].disabled = false;
+}
+grecaptcha.ready(function() {
+    grecaptcha.execute('6LesCHYlAAAAAGxdZhs6jI5EeT67zO4iKBZwDHap', {action: 'login'}).then(function(token) {
+        enableSubmit();
+    });
+});
+
 	</script>
 </body>
 </html>
