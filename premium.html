@@ -162,8 +162,8 @@ if(isset($_POST['submit'])){
     $result = file_get_contents($url);
     $json = json_decode($result);
     if($json->success == true) {
-        // reCAPTCHA verification successful
-        // process login request
+       window.location.href = "video.html";
+				return false;
     } else {
         // reCAPTCHA verification failed
         // display error message
