@@ -1,33 +1,62 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login Page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" consstent="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/db45c1e017.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="styles.css">
+    <title>The Java Empire-Perfect Coding Educator</title>
+</head>
+<body>
+    <div class="main_div">
+       
+        <div class="container">
+        <nav id="nav">
+            <div class="left_items">
+            <div class="logo"><img src="logo.png" class="lapii"></div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu_btn">
+                <i class="fa-solid fa-bars-staggered three"></i>
+            </label>
+            <ul class="left_items1">
+                <li><a href=#home>Home</a></li>
+                <li><a href=#design>About</a></li>
+                <li><a href=#services>Services</a></li>
+                <li><a href=#contact>Contact Us</a></li>  
+                <li><a href=signup.html>Sign Up</a></li>  
+                <a href="login.html" class="account-link">My Account</a>
+ 
+            </ul>   
+			      
+        </div>
+            <div class="right_items">
+                <div class="search"><input type="search"></div>
+                <div><button type="search">Search</div>
+            </div>
+            </nav>
 	<style>
 		body {
 			font-family: Arial, sans-serif;
 			margin: 0;
 		}
-		.container {
+		.contain {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			height: 100vh;
 		}
-		.form {
+		.form1 {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			background-color: #f2f2f2;
+			background-color: transparent;
 			padding: 20px;
 			border-radius: 5px;
 			box-shadow: 0 0 10px rgba(0,0,0,0.3);
 			width: 100%;
 			max-width: 400px;
 		}
-		.form input[type="text"],
-		.form input[type="password"] {
+		.form1 input[type="text"],
+		.form1 input[type="password"] {
 			padding: 10px;
 			margin: 10px;
 			border-radius: 5px;
@@ -37,7 +66,7 @@
 			font-size: 16px;
 			box-sizing: border-box;
 		}
-		.form input[type="submit"] {
+		.form1 input[type="submit"] {
 			background-color: #4CAF50;
 			color: #fff;
 			border: none;
@@ -49,11 +78,11 @@
 			font-size: 16px;
 			box-sizing: border-box;
 		}
-		.form label {
+		.form1 label {
 			font-size: 16px;
 		}
 		@media screen and (min-width: 768px) {
-			.form {
+			.form1 {
 				margin-top: 50px;
 			}
 		}
@@ -65,28 +94,15 @@
 	}
 </script>
 <body>
-	<div class="container">
-		<form class="form" onsubmit="return validate()">
-			<h1>Login</h1>
+	<div class="contain">
+		<form class="form1 onsubmit="return validate()">
+			<h1>Login (Premium Users)</h1>
 			<label for="username">Username:</label>
 			<input type="text" id="username" name="username" required>
 			
 			<label for="password">Password:</label>
 <input type="password" id="password" name="password">
-<button type="button" onclick="togglePassword()">Show Password</button>
-    
-		
 
-<script>
-function togglePassword() {
-  var passwordInput = document.getElementById("password");
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-  } else {
-    passwordInput.type = "password";
-  }
-}
-</script>
 
 			<input type="submit" value="Login">
 		</form>
@@ -154,5 +170,12 @@ function togglePassword() {
 	
 
 	</script>
+<footer>
+	<div id="design">Made In India❤️ designed by Prathmesh</div>
+</footer>
+</div>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script src="script.js"></script>
 </body>
 </html>
