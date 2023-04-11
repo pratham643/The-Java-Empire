@@ -51,27 +51,31 @@ var chatWindow = new Bubbles(document.getElementById("chat"), "chatWindow", {
 // "Basic chat-bubble Example" (1-basics.html)
 var convo = {
   "ice": {
-    says: ["Hi", "How Can I Help you Booking Related Query, Payment Realated Query, Parking Security Guard Number, Connect With Agent?"],
+    says: ["Hi", "How Can I Help you Subscription Related Query, Course Related Query, Demo Class Related Query, Connect With Agent?"],
     reply: [
       {
-        question: "Booking Related Query",
-        answer: "Booking Related Query"
+        question: "Subscription Related Query",
+        answer: "Subscription Related Query"
       },
       {
-        question: "Payment Realated Query",
-        answer: "Payment Realated Query"
+        question: "Course Related Query",
+        answer: "Course Related Query"
       },
       {
-        question: "Parking Security Guard Number",
-        answer: "Parking Security Guard Number"
+        question: "Demo Class Related Query",
+        answer: "Demo Class Related Query"
       },
       {
         question: "Connect With Agent",
         answer: "Connect With Agent"
+      },
+      {
+        question: "Chat On Whatsapp",
+        answer: "Chat On Whatsapp"
       }
     ]
   },
-  "Booking Related Query": {
+  "Subscription Related Query": {
     says: ["Currently We Are Not Available On Chat Service, Soon It will Start.Please Conatct Us On 8055450657."],
     reply: [
       {
@@ -80,7 +84,7 @@ var convo = {
       }
     ]
   },
-  "Payment Realated Query": {
+  "Course Related Query": {
     says: ["Currently We Are Not Available On Chat Service, Soon It will Start.Please Conatct Us On 8055450657."],
     reply: [
       {
@@ -89,7 +93,7 @@ var convo = {
       }
     ]
   },
-  "Parking Security Guard Number": {
+  "Demo Class Related Query": {
     says: ["Currently We Are Not Available On Chat Service, Soon It will Start.Please Conatct Us On 8055450657."],
     reply: [
       {
@@ -106,7 +110,17 @@ var convo = {
         answer: "ice"
       }
     ]
+  },
+  "Chat On Whatsapp": {
+    says: ["Currently We Are Not Available On Chat Service, Soon It will Start.Please Conatct Us On 8055450657."],
+    reply: [
+      {
+        question: "Start Over",
+        answer: "ice"
+      }
+    ]
   }
+  
 }
 
 // pass JSON to your function and you're done!
