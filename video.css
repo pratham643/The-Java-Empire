@@ -39,3 +39,33 @@
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
+}
+/* Video player container */
+video {
+  width: 100%;
+  height: auto;
+}
+
+
+
+video::-webkit-media-controls-volume-slider {
+  width: 50%;
+}
+
+/* Progress bar */
+video::-webkit-media-controls-timeline-container {
+  margin: 0 10px;
+}
+
+video::-webkit-media-controls-timeline-progress-bar {
+  background-color: white;
+}
+
+video::-webkit-media-controls-timeline-progress-bar::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-timeline-progress-bar::-webkit-media-controls-time-remaining-display {
+  color: white;
+  font-size: 12px;
+}
+
+
+
