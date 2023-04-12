@@ -8,7 +8,7 @@
 }
 
 .folder1, .folder2 {
-  margin-top: 70px;
+  margin-top: 100px;
   background-color: transparent;
   padding: 20px;
   border-radius: 5px;
@@ -335,10 +335,10 @@ a{
         left: -100%;
         background-color: rgba(0,0,0,0.5);
         /* background-color: #111; */
-        height:100vh;
+        height:vh;
         width: 100%;
-        display: block;
-        text-align: center;
+        display: flex;
+        text-align: right;
         
         transition: all 0.3s ease;
      }
@@ -352,13 +352,13 @@ a{
         display: block;
         /* border: 2px solid red; */
         width:100%;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .left_items1 li  {
         margin-bottom: 3rem;
     }
     .mid_box{
-        display: flex;
+       display: flex;
         justify-content: center;
         align-items: center;
         margin-left: 3rem;
@@ -366,13 +366,13 @@ a{
     }
      
     nav{
-        display: flex;
+        display: inline;
         justify-content: space-between;
         width:100%;
         /* border:2px solid yellow; */
     }
      .menu_btn i{
-        display: block;
+       display: flex;
         /* float: right; */
         /* border:2px solid yellow; */
         /* margin-left: 21rem; */
@@ -444,6 +444,5 @@ video::-webkit-media-controls-timeline-progress-bar::-webkit-media-controls-time
   color: white;
   font-size: 12px;
 }
-
 
 
