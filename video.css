@@ -333,12 +333,12 @@ a{
         position: fixed;
         top:4rem;
         left: -100%;
-        background-color: rgba(0,0,0,0.5);
+        background-color: black;
         /* background-color: #111; */
         height:vh;
         width: 100%;
         display: flex;
-        text-align: right;
+        text-align: center;
         
         transition: all 0.3s ease;
      }
@@ -348,7 +348,7 @@ a{
         /* margin-right:1%; */
      }
     .left_items1 {
-        padding: 4rem;
+        padding: 5rem;
         display: block;
         /* border: 2px solid red; */
         width:100%;
