@@ -333,7 +333,7 @@ a{
         position: fixed;
         top:4rem;
         left: -100%;
-        background-color: black;
+        background-color: rgba(124, 21, 21, 0);;
         /* background-color: #111; */
         height:vh;
         width: 100%;
