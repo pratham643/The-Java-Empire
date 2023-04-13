@@ -159,7 +159,7 @@ nav{
 }
 .left_items li a{
     text-decoration: none;
-    margin-right: 2rem;
+    margin-right: 0.5rem;
     color: aliceblue;
     letter-spacing: 1px;
 }
