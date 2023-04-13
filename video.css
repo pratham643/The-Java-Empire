@@ -190,7 +190,7 @@ nav{
 .right_items button{
     font-family: 'Cormorant SC', serif;
     border-radius: 0.4rem;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(124, 21, 21, 0);;
     border-color: aliceblue;
     color: aliceblue;
     width:4rem;
@@ -220,7 +220,7 @@ nav{
 }
 .mid_box .left button{
     border-radius: 0.4rem;
-    background-color: rgba(124, 21, 21, 0);;
+    background-color: rgba(124, 21, 21, 0);
     border-color: aliceblue;
     color: aliceblue;
     width:6rem;
